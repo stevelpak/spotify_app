@@ -19,7 +19,7 @@ class SubscriptInfoPage extends StatelessWidget {
       backgroundColor: const Color(0xff0E0E12),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child: ClipPath(
             clipper: TicketClipper(),
             child: Container(
@@ -32,7 +32,7 @@ class SubscriptInfoPage extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 15, vertical: 20),
+                              horizontal: 15, vertical: 10),
                           child: Column(
                             children: [
                               Row(
@@ -63,7 +63,7 @@ class SubscriptInfoPage extends StatelessWidget {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(vertical: 25),
+                                    const EdgeInsets.symmetric(vertical: 15),
                                 child: Image.asset(
                                   'assets/spotify_logo.png',
                                   height: 106,
@@ -90,7 +90,7 @@ class SubscriptInfoPage extends StatelessWidget {
                         ),
                         Padding(
                           padding:
-                              EdgeInsets.only(top: constraints.maxHeight / 2.2),
+                              EdgeInsets.only(top: constraints.maxHeight / 2.5),
                           child: Column(
                             children: [
                               const LineDash(
@@ -99,8 +99,9 @@ class SubscriptInfoPage extends StatelessWidget {
                               Container(
                                 margin: const EdgeInsets.only(
                                   left: 17,
-                                  top: 36,
+                                  top: 20,
                                   right: 23,
+                                  bottom: 20,
                                 ),
                                 padding: const EdgeInsets.all(1),
                                 decoration: BoxDecoration(
@@ -125,9 +126,26 @@ class SubscriptInfoPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
+                              UnicornOutlineButton(
+                                strokeWidth: 1,
+                                radius: 75,
+                                gradient: _gradient,
+                                bgColor: const Color(0XFF3D3D47),
+                                onPressed: () {},
+                                child: Container(
+                                  padding: EdgeInsets.only(
+                                    left: constraints.maxWidth / 2.5,
+                                    right: constraints.maxWidth / 2.5,
+                                  ),
+                                  child: const Text(
+                                    "Save",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              )
                             ],
                           ),
-                        )
+                        ),
                       ],
                     )),
               ),
